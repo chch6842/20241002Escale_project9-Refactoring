@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../wwwroot/css/s5.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container mb-l">
+    <nav class="navbar fix-top navbar-expand-lg navbar-light bg-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button data-bs-toggle="collapse" data-bs-target=".collapse" class="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav text-center">
+            <!-- nav=link 水平呈現,navbar-nav=垂直呈現 text-center=內容居-->
+            <li class="nav-item">
+              <a href="" class="nav-link">會員首頁</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">雲端資料庫</a>
+            </li>
+            <li class="nav-item"><a href="" class="nav-link">購物車</a></li>
+            <li class="nav-item">
+              <a href="" class="nav-link">聯繫我們</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container mb-2">
+
+    <div>
+      <h2>
+        <span class="title-text">精選商品</span>
+      </h2>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="articleInfo">
+            <h3 class="articleTitle">智能營養監測，隨時隨地掌握健康狀態</h3>
+            <img
+              src="https://d41chssnpqdne.cloudfront.net/artist_bot/29606060/task_task:21cfb400-11b0-48b3-b4e8-bb400f005745/eHbjN.png?Expires=1721213688&Signature=bjjc2bZP2tfb0hcPaJZPgOmM2lgs51TjcEBzcJsosqKkq~YPUtKryVHzfkIRzzsTyMQfVoXnq-Amgr2Gh1sKnAXo9JsqT38Y5kdskjlKKoMCoe1FG9rhyJbeqGTVvfJf3MkABUlNX7A3gcFPKjs2gXvQV6jlZvSEg5iasbXa8Ko7LO4pxSlnwITKGDA98nzQ566t-0UuknFckqFBjSRMD4UjCKPKgBeXbXo7Y46ES6Tc-Ot5azn0ZVqEKJIEPCFFSX7jXnqJIMQSlujWXogPtTvvnBWOhLaT6FgwQsWKrxZIQcB-FssmtH9o70cGmme-3iiJu2~euDgJM4VNyLv1Mw__&Key-Pair-Id=K3USGZIKWMDCSX"
+              alt="blogImg04" class="articleImg" />
+            <div class="articleContent">
+              <p>
+                智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
+              </p>
+
+              <!-- </div> -->
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="智慧聯網電子秤"
+                  onclick="confirmPurchase('智慧聯網電子秤')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://raw.githubusercontent.com/chch6842/DIGITALSCALE/master/%E8%B3%BC%E7%89%A9%E8%BB%8A/image/%E6%99%BA%E6%85%A7%E8%81%AF%E7%B6%B2%E9%9B%BB%E5%AD%90%E7%A7%A4.jfif"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">
+              直達家門的田園鮮蔬，給您最天然的滋味
+            </h3>
+            <div class="articleContent">
+              <p>
+                田園新鮮蔬果盒，友善農業出品，精心搭配每日營養，方便又美味
+              </p>
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="蔬菜箱"
+                  onclick="confirmPurchase('蔬菜箱')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://raw.githubusercontent.com/chch6842/DIGITALSCALE/master/%E8%B3%BC%E7%89%A9%E8%BB%8A/image/%E6%99%BA%E6%85%A7%E8%81%AF%E7%B6%B2%E9%9B%BB%E5%AD%90%E7%A7%A4.jfif"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">從田間到餐桌，享受有機米的自然風味</h3>
+            <div class="articleContent">
+              <p>
+                有機米，來自純淨土壤與友善農法，經過精心耕種，保留了天然營養，口感香濃
+              </p>
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="有機米"
+                  onclick="confirmPurchase('有機米')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://raw.githubusercontent.com/chch6842/DIGITALSCALE/master/%E8%B3%BC%E7%89%A9%E8%BB%8A/image/%E6%99%BA%E6%85%A7%E8%81%AF%E7%B6%B2%E9%9B%BB%E5%AD%90%E7%A7%A4.jfif"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">智能營養監測，隨時隨地掌握健康狀態</h3>
+
+            <div class="articleContent">
+              <p>
+                智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
+              </p>
+
+              <!-- </div> -->
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="智慧聯網電子秤"
+                  onclick="confirmPurchase('智慧聯網電子秤')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper(".swiper", {
+        freeMode: true /*自由滑動*/,
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        loop: true, // 启用循环播放
+        autoplay: {
+          delay: 100, // 设置自动播放延迟时间，单位为毫秒
+          disableOnInteraction: true, // 用户交互后是否停止自动播放
+        },
+        grid: {
+          rows: 3,
+        },
+        breakpoints: {
+          768: {
+            grid: {
+              rows: 1,
+            },
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+
+          375: {
+            grid: {
+              rows: 1,
+            },
+            slidesPerView: 1,
+            spaceBetween: 24,
+          },
+        },
+      });
+
+      // 获取所有购买按钮，这些按钮具有类名为 .btn-primary 和 data-toggle="modal"
+      const purchaseButtons = document.querySelectorAll(
+        '.btn-primary[data-toggle="modal"]'
+      );
+
+      // 遍历处理每个购买按钮
+      purchaseButtons.forEach((button) => {
+        // 为每个按钮添加点击事件监听器
+        button.addEventListener("click", function () {
+          // 获取购买按钮上的商品名称
+          const itemName = button.getAttribute("data-item");
+
+          // 弹出确认对话框
+          const result = confirm(`您确定要购买 ${itemName} 吗？`);
+
+          // 根据用户的选择执行相应的操作
+          if (result) {
+            alert(`您已成功购买 ${itemName}！`);
+            // 这里可以添加购买成功后的其他操作，比如跳转到购物车页面
+          } else {
+            alert(`您已取消购买 ${itemName}。`);
+            // 这里可以添加用户取消购买时的操作
+          }
+        });
+      });
+    });
+
+    // 切换商品收藏状态的函数
+    function toggleFavorite(button) {
+      // 获取商品名称
+      const itemName = button.parentElement
+        .querySelector(".btn-primary")
+        .getAttribute("data-item");
+
+      // 切换按钮样式和文本
+      if (button.classList.contains("btn-danger")) {
+        button.classList.remove("btn-danger");
+        button.classList.add("btn-secondary");
+        button.textContent = "收藏";
+        alert(`您已取消收藏 ${itemName}。`);
+      } else {
+        button.classList.remove("btn-secondary");
+        button.classList.add("btn-danger");
+        button.textContent = "取消收藏";
+        alert(`您已成功收藏 ${itemName}！`);
+      }
+    }
+  </script>
+</body>
+
+</html>

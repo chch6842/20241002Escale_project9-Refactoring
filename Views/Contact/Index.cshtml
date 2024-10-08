@@ -1,0 +1,134 @@
+
+
+@model vmContact
+
+@{
+    ViewData["Title"] = "連絡我們";
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+     @* <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .content {
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style> *@
+</head>
+<body>
+
+<div class="content-container">
+
+  <div class="content-block">
+    <h3 class="section-title">公司介紹</h3>
+    <p class="section-text">歡迎來到我們的公司，我們專注於開發物聯網連網電子料理秤，致力於為用戶提供精確的食物測量和營養管理解決方案。</p>
+  </div>
+
+</div>
+
+<div class="content-container">
+  <div class="content-block">
+
+      <h3 class="section-title">產品介紹</h3>
+      <p class="section-text"><strong>物聯網連網電子料理秤</strong></p>
+
+      <ul class="feature-list">
+        <li><strong>精確測量：</strong>我們的電子料理秤使用先進的感應器技術，能夠精確地測量食物的重量和營養成分。</li>
+        <li><strong>無縫連接：</strong>通過 Wi-Fi 或藍牙，電子料理秤可以方便地連接到互聯網，確保測量數據的即時傳輸。</li>
+      </ul>
+  </div>
+</div>
+
+<div class="content-container">
+
+  <div class="content-block ">
+
+      <h3 class="section-title">功能介紹</h3>
+
+    <div class="feature-section">
+      <h5>飲食數據分析</h5>
+      <p><strong>個人化管理：</strong>用戶界面友好，提供查看和分析個人飲食習慣的功能。</p>
+      <p><strong>機器學習和人工智慧技術：</strong>我們運用先進的技術對用戶的飲食數據進行深度分析，包括營養成分和攝入量等方面。</p>
+
+      <h5>個性化飲食建議</h5>
+      <p><strong>定制建議：</strong>根據分析結果，為用戶生成個性化的飲食建議，並提供方便的商城連接，讓用戶能夠輕鬆購買所需食品。</p>
+
+      <h5>即時通訊支持</h5>
+      <p><strong>數據分享：</strong>用戶可以通過 Line 或其他即時通訊平台將數據發送給參與者，實現數據的便捷分享。</p>
+      <p><strong>社群互動：</strong>通過即時通訊平台，實現用戶之間的相互督促和支持，提升健康管理的互動性和趣味性。</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 內容 -->
+<main id="container">
+    <!-- 聯絡我們 -->
+    <section class="contact" id="contact">
+        @using(Html.BeginForm("Contact" , "Contact" , new {area = ""} , FormMethod.Post , null , new { @class="form"}))
+        {
+            @Html.AntiForgeryToken()
+            <h2 class="title" style="font-family: Kalam">聯絡我們</h2>
+            <fieldset class="form_main">
+            <fieldset class="form_left">
+                <div class="inputContainer">
+                    <input type="email" id="ContactorEmail" name="ContactorEmail" class="input" placeholder="a" required />
+                    <label for="ContactorEmail" class="label">電子信箱</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="text" id="ContactorName" name="ContactorName" class="input" placeholder="a" required />
+                    <label for="ContactorName" class="label">姓名</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="text" id="ContactorSubject" name="ContactorSubject" class="input" placeholder="a" required />
+                    <label for="ContactorSubject" class="label">主旨</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form_right">
+                <div class="inputContainer">
+                    <textarea id="ContactorMessage" name="ContactorMessage" class="input" cols="30" rows="20" placeholder="a" required></textarea>
+                    <label for="ContactorMessage" class="label">留言</label>
+                </div>
+            </fieldset>
+            </fieldset>
+
+            <button name="submit" type="submit" class="submitBtn">
+            確認送出
+            </button>
+        }
+    </section>
+</main>
+
+@section Styles
+{
+    <!-- 依需要引用不同樣式表 -->
+  <link rel="stylesheet" href="@Url.Content("~/lib/ESCALE/Home/css/contactstyle.css")" />
+
+}
+
+</body>
+</html>
+
+

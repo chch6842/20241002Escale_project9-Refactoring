@@ -1,0 +1,98 @@
+@model escale.Models.Products
+
+@{
+  ViewData["Title"] = "商品明細";
+    Layout = "_Layout";
+}
+@{
+  ViewData["Title"] = SessionService.ActionName;
+  //string ProductImageUrl = "";
+  string CateGoryImageUrl = $"~/images/categorys/{SessionService.StringValue2}.jpg";
+  List<Categorys> TopCategoryList = new List<Categorys>();
+  List<Categorys> DetailCategoryList = new List<Categorys>();
+  using var category = new z_sqlCategorys();
+  TopCategoryList = category.GetTopCategoryList();
+}
+
+
+<h1>明細</h1>
+
+<div class="container">
+  <h4>商品</h4>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <img src="@Html.DisplayFor(model => model.Remark)" alt="Remark Image" class="img-fluid" />
+    </div>
+    <div class="col-md-6">
+      <dl class="row">
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProdNo)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProdNo)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProdName)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProdName)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BrandName)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.BrandName)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BrandSeriesName)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.BrandSeriesName)</dd>
+
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ContentText)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.ContentText)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.SpecificationText)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.SpecificationText)</dd>
+
+        <label class="font-bold">數量：</label>
+        <div class="cart-quantity">
+          <form action="#" method="POST" id="myform">
+            <div class="product-qty">
+              <div class="cart-quantity">
+                <div class="cart-plus-minus">
+                  <div class="dec qtybutton">-</div>
+                  <input type="text" value="1" name="qtybutton" class="cart-plus-minus-box">
+                  <div class="inc qtybutton">+</div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+      </dl>
+      <!-- 加入購物車/立即結帳 btn -->
+      <div class="social-icon socile-icon-style-1">
+        <ul>
+          <li>
+            <a href="@Url.Action("AddCart" , "Cart" , new {area = "" , id=Model.ProdNo})" data-tooltip="加入購物車"
+              class="add-cart add-cart-text btnmy" data-placement="left" tabindex="0">
+              加入購物車<i class="fa fa-cart-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="Payment.html" data-tooltip="立即結帳" class="add-cart add-cart-text btnmy" data-placement="left"
+              tabindex="0">
+              立即結帳
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Styles
+{
+  <!-- 依需要引用不同樣式表 -->
+  <link rel="stylesheet" href="@Url.Content("~/lib/ESCALE/Home/css/product-details.css")" />
+
+}

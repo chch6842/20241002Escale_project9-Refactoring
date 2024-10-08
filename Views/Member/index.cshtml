@@ -1,0 +1,98 @@
+﻿@{
+  ViewData["Title"] = "我的帳戶";
+  Layout = "_LayoutMember";
+
+}
+
+<div class="d-flex justify-content-start ms-5">
+  <h1>username,您好!</h1>
+  <div class="mt-3">
+    <button class="ms-5 logoutBtn py-0 ps-4" type="button">登出</button>
+  </div>
+</div>
+<div class="rounded-pill bg-white fontColor MemberIndexTitle text-center ms-5 my-3 pt-1
+ps-2 fs-4 shadow">
+  帳號
+</div>
+<div class="ms-5 my-3 fs-5">user.email</div>
+<div class="rounded-pill bg-white fontColor MemberIndexTitle2 text-center ms-5 mt-4 pt-1
+ps-2 fs-4 shadow">
+  會員資料
+</div>
+<form class="">
+  <div class="ms-5 mt-4 d-flex justify-content-between">
+    <!-- 點lable for會抓取框 -->
+    <div class="w-25 fontColor">
+      <label for="MIusername"> 姓名:</label>
+      <input type="text" placeholder="user.name" class="form-control MemberIndexInput p-0 mt-2 fontColor w-100"
+        id="MIusername">
+    </div>
+
+
+    <div class="ms-4 ">
+      <label>性别:</label>
+      <div class="ms-1 mt-2 form-group fontColor">
+        <input type="radio" id="MImale" name="gender" value="male" class="form-check-input">
+        <label for="male" class="form-check-label ">先生</label>
+
+        <input type="radio" id="MIfemale" name="gender" value="female" class="form-check-input ms-3 ">
+        <label for="female" class="form-check-label">小姐</label>
+      </div>
+    </div>
+
+    <div class="mx-4 MemberIndexBitrh fontColor">
+      <label for="MIbirthday"> 出生年月日:</label>
+      <input type="text" placeholder="user.birthday" class="form-control MemberIndexInput p-0 mt-2 fontColor w-100"
+        id="MIbirthday">
+    </div>
+
+    <div class="MemberIndexPhone fontColor">
+      <label for="MIcellphone"> 手機號碼:</label>
+      <input type="phone" placeholder="user.cellphone" class="form-control MemberIndexInput p-0 mt-2 fontColor w-100"
+        id="MIcellphone">
+    </div>
+  </div>
+  <div class="ms-5 mt-5 d-flex justify-content-start">
+    <div class="MemberIndexMail fontColor">
+      <label for="MIemail"> E-mail:</label>
+      <input type="phone" placeholder="user.email" class="form-control MemberIndexInput p-0 mt-2 fontColor w-100"
+        id="MIemail">
+    </div>
+    <div class="ms-5 MemberIndexAdress fontColor">
+      <label> 聯絡地址:</label>
+      <div class="d-flex justify-content-between form-group">
+        <select id="MIcity" name="MIcity" class="MemberIndexInput fontColor">
+          <option value="option1">user.adress.city</option>
+          <option value="option2">帶資料</option>
+          <option value="option3">從後端</option>
+        </select>
+        <select id="MItown" name="MItown" class="MemberIndexInput mx-3 fontColor">
+          <option value="option1">user.adress.town</option>
+          <option value="option2">帶資料</option>
+          <option value="option3">從後端</option>
+        </select>
+        <!-- <input type="text" placeholder="user.adress.city" class="MemberIndexInput p-0 mt-2  " id="MIcity">
+                <input type="text" placeholder="user.adress.town" class="form-control MemberIndexInput p-0 mt-2 mx-4 "
+                  id="MItown"> -->
+        <input type="text" placeholder="user.adress.detail"
+          class="form-control MemberIndexInput p-0 mt-2 w-100 fontColor" id="MIadress">
+      </div>
+    </div>
+
+  </div>
+  <div class="text-end mt-5">
+    <input type="checkbox" id="MIad" name="ad" value="male" class="form-check-input">
+    <label class="text-end fontColor letterSpacing05 ms-1 ">我願意收到最新消息情報
+    </label>
+  </div>
+</form>
+
+
+<div class=" d-flex justify-content-end mt-2">
+  <button class="ms-5  MemberJoinBtn text-white border-3 font-weightB " type="button">修改基本資料</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

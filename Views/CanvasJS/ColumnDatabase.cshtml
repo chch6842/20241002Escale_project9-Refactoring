@@ -1,0 +1,145 @@
+@{
+  ViewData["Title"] = "動態 Column 長條圖(資料來自資料庫)";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Layout = "_Layout";
+}
+
+<div class="card card-size-max">
+  <div class="card-header bg-primary text-white">
+    <div class="float-start">
+      <h5>
+        動態 Column 長條圖(資料來自資料庫) <span id="CurrentTime"></span>
+      </h5>
+    </div>
+    <div class="float-end">
+      <h5>
+        CanvasJS
+      </h5>
+    </div>
+  </div>
+  <div class="card-body">
+    <table>
+      <tr>
+        <td>開始日期:</td>
+        <td>
+          <input type="date" id="StartDate" name="StartDate">
+        </td>
+        <td>結束日期:</td>
+        <td>
+          <input type="date" id="EndDate" name="EndDate">
+        </td>
+        <td><input type="button" value="查詢" onclick="RenderChart();"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="chartContainer"></div>
+
+@section Scripts
+
+{
+
+  <script src="@Url.Content("~/lib/jquery/dist/jquery.min.js")"></script>
+  <script src="@Url.Content("~/lib/jqueryui/jquery-ui.min.js")"></script>
+  <script src="@Url.Content("~/lib/bootstrap/dist/js/bootstrap.bundle.min.js")"></script>
+  <script src="@Url.Content("~/lib/Chart.js/chart.umd.min.js")"></script>
+  <script src="@Url.Content("~/lib/Chart.js.datalabels/chartjs-plugin-datalabels.min.js")"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
+    function RenderChart() {
+      var startDate = document.getElementById("StartDate").value;
+      var endDate = document.getElementById("EndDate").value;
+      $.ajax({
+        type: "get",
+        url: "@Url.Action("ColumnDatabaseData", "CanvasJS", new { area = "" })",
+        contentType: "application/json; charset=utf-8",
+        data: { startDate: startDate, endDate: endDate },
+        dataType: "json",
+        success: function (result) {
+          var dataPoints = [];
+          for (var i = 0; i < result.length; i++) {
+            dataPoints.push({ y: result[i].y, label: result[i].label });
+          }
+          var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2",
+            animationEnabled: true,
+            title: {
+              text: "即時水果銷售統計圖(資料來自資料庫)"
+            },
+            data: [
+              {
+                type: "column",
+                dataPoints: dataPoints,
+              }
+            ]
+          });
+          chart.render();
+        }
+
+      });
+    }
+  </script>
+}

@@ -1,0 +1,40 @@
+protected void btnRegister_Click(object sender, EventArgs e)
+{
+    string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        string username = txtUsername.Text;
+        string password = txtPassword.Text; // 在實際應用中應該加密密碼
+        string email = txtEmail.Text;
+
+        string query = "INSERT INTO members (username, password, email) VALUES (@username, @password, @email)";
+
+        SqlCommand cmd = new SqlCommand(query, conn);
+        cmd.Parameters.AddWithValue("@username", username);
+        cmd.Parameters.AddWithValue("@password", password); // 在實際應用中應該使用密碼加密方法
+        cmd.Parameters.AddWithValue("@email", email);
+
+        try
+        {
+            conn.Open();
+            int rowsAffected = cmd.ExecuteNonQuery();
+            if (rowsAffected > 0)
+            {
+                Response.Write("註冊成功");
+            }
+            else
+            {
+                Response.Write("註冊失敗");
+            }
+        }
+        catch (SqlException ex)
+        {
+            Response.Write("SQL 錯誤: " + ex.Message);
+        }
+        finally
+        {
+            conn.Close();
+        }
+    }
+}

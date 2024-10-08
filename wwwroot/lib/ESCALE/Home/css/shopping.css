@@ -1,0 +1,271 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.con {
+  max-width: 100%;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+.con .mb-1 {
+  max-width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
+.container .mb-2 {
+  max-width: 100%;
+  padding: 0 12px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #ba6161;
+}
+
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+} */
+.breadcrumb {
+  padding: 0 100px;
+  /* 將左右內邊距都設置為 100px */
+}
+
+.breadcrumb-item2::after {
+  content: ">";
+  color: darkcyan;
+  margin: 0 5px;
+}
+
+.breadcrumb-item2 a {
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.breadcrumb-item2:last-child::after {
+  content: "";
+}
+
+.text-center {
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  vertical-align: bottom;
+}
+
+h2 {
+  margin: 20px auto 20px;
+  width: 372px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  line-height: 1.2;
+  position: relative;
+  font-weight: bold;
+}
+
+/* h2::before {
+  content: "";
+  position: absolute;
+  width: 372px;
+  height: 2px;
+  background-color: #c1c1c1;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+} */
+
+/* .title-text::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title-text::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.title-text {
+  color: #3b3b3b;
+  padding: 0 16px;
+  background: #ffffff;
+  z-index: 1;
+} */
+
+.articleInfo {
+  padding: 0 4px;
+}
+
+.articleTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.articleContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scalesContent p {
+  padding: 4px 0;
+}
+
+.articleContent p {
+  padding: 4px 0;
+}
+
+.articleContent p:first-child {
+  background-color: #f1f1f1;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.articleImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.swiper {
+  padding-bottom: 52px;
+}
+
+.swiper-pagination {
+  display: block;
+}
+
+.swiper-pagination-bullet {
+  /* 分頁按鈕定位調整，active 時顏色為黑色 #000000 ，圓點左右間距為 16px，大小調整為 12px * 12px */
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #000000;
+}
+
+.articleBtn {
+  /*   「更多文章」按鈕電腦版時隱藏 */
+  display: none;
+}
+
+.footer {
+  /* width: 1300px;
+  margin: 0px auto;
+  display: flex; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  gap: 50px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  /* Optional: Adds space between the icons */
+}
+
+.social-icon {
+  font-size: 3em;
+  /* Adjust the size as needed */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: #000;
+  /* Set the color of the icons */
+}
+
+.social-icon:hover {
+  color: #007bff;
+  /* Optional: Change color on hover */
+}
+
+@media (max-width: 768px) {
+  .swiper {
+    padding-bottom: 0;
+    margin-bottom: -8px;
+  }
+
+  .swiper-slide {
+    margin-bottom: 48px;
+  }
+
+  .swiper-slide:nth-child(n + 4) {
+    /*     手機版時（768px 以下），從第 4 個 swiper-slide 開始之後隱藏（只留下 3 個） */
+    display: none;
+  }
+
+  .swiper-pagination {
+    /*     手機版時（768px 以下），分頁按鈕隱藏 */
+    display: none;
+  }
+
+  .articleBtn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .footer {
+    /* width: 1300px;
+  margin: 0px auto;
+  display: flex; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+  }
+}

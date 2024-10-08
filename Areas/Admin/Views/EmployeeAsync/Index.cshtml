@@ -1,0 +1,96 @@
+@model IEnumerable<escale.Models.Employees>
+
+@{
+    ViewData["Title"] = "員工資料列表";
+    Layout = "_Layout";
+}
+
+<div class="card border-secondary">
+    <div class="card-header bg-secondary text-white">
+        <h5>@ViewData["Title"]</h3>
+    </div>
+    <div class="card-body">
+        <div class="overflow-scroll">
+            <table class="table table-bordered">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>
+                            @Html.ActionLink("新增", "Create", "EmployeeAsync", new { area = "" }, new
+                                {
+                                    @class
+                                     = "btn btn-primary"
+                                })
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmpNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmpName)
+                        </th>
+                        @* <th>
+                            @Html.DisplayNameFor(model => model.GenderName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DeptName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TitleName)
+                        </th> *@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Birthday)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ContactTel)
+                        </th>
+                        @* <th>
+                            @Html.DisplayNameFor(model => model.ContactFullAddress)
+                        </th> *@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Remark)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.ActionLink("修改", "Edit", "EmployeeAsync", new { area = "", id = item.Id }, new
+                                    { @class = "btn btn-success" })
+                                @Html.ActionLink("刪除", "Delete", "EmployeeAsync", new { area = "", id = item.Id },
+                                         new { @class = "btn btn-danger", onclick = "return confirm('是否確定要刪除?');" })
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpName)
+                            </td>
+                            @* <td>
+                                @Html.DisplayFor(modelItem => item.GenderName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DeptName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TitleName)
+                            </td> *@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Birthday)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContactTel)
+                            </td>
+                            @* <td>
+                                @Html.DisplayFor(modelItem => item.ContactFullAddress)
+                            </td> *@
+                            <td class="table-wrap">
+                                @Html.DisplayFor(modelItem => item.Remark)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="../../wwwroot/css/S10.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+  <!-- <style>
+      .breadcrumb {
+        padding: 0 100px; /* 覆蓋內部變數 */
+      }
+    </style> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="con mb-l">
+    <nav class="navbar fix-top navbar-expand-lg navbar-light bg-light">
+      <!-- <div class="container-fluid"> -->
+      <a class="navbar-brand" href="#">Brand</a>
+      <button data-bs-toggle="collapse" data-bs-target=".collapse" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav text-center">
+          <!-- nav=link 水平呈現,navbar-nav=垂直呈現 text-center=內容居-->
+          <li class="nav-item">
+            <a href="" class="nav-link">會員首頁</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">雲端資料庫</a>
+          </li>
+          <li class="nav-item"><a href="" class="nav-link">購物車</a></li>
+          <li class="nav-item">
+            <a href="" class="nav-link">聯繫我們</a>
+          </li>
+          <li class="nav-item">
+            <div class="common__lightbox-box">
+              <div class="search-lightbox">
+                <a class="search-lightbox__close" data-lightbox-close=""></a>
+                <div class="search-lightbox__box">
+                  <form action="/search" onsubmit="return search()" class="search-lightbox__form">
+                    <input type="text" name="q" value="" placeholder="請輸入關鍵字搜尋...">
+                    <button type="submit"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="bread">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item2"><a href="">購物車</a></li>
+      <li class="breadcrumb-item2"><a href="">精選商品</a></li>
+      <!-- <li class="breadcrumb-item2"><a href="">新人展示</a></li>
+      <li class="breadcrumb-item2"><a href="">大偉</a></li>
+      <li class="breadcrumb-item2"><a href="">攝影作品</a></li> -->
+    </ul>
+  </div>
+  <div class="container mb-2">
+    <h2>
+      <span class="title-text">精選商品</span>
+    </h2>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper">
+      <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="articleInfo">
+  
+            <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" style="display: block;"> -->
+            <!-- <img
+              src="https://d41chssnpqdne.cloudfront.net/artist_bot/29606060/task_task:21cfb400-11b0-48b3-b4e8-bb400f005745/eHbjN.png?Expires=1721213688&Signature=bjjc2bZP2tfb0hcPaJZPgOmM2lgs51TjcEBzcJsosqKkq~YPUtKryVHzfkIRzzsTyMQfVoXnq-Amgr2Gh1sKnAXo9JsqT38Y5kdskjlKKoMCoe1FG9rhyJbeqGTVvfJf3MkABUlNX7A3gcFPKjs2gXvQV6jlZvSEg5iasbXa8Ko7LO4pxSlnwITKGDA98nzQ566t-0UuknFckqFBjSRMD4UjCKPKgBeXbXo7Y46ES6Tc-Ot5azn0ZVqEKJIEPCFFSX7jXnqJIMQSlujWXogPtTvvnBWOhLaT6FgwQsWKrxZIQcB-FssmtH9o70cGmme-3iiJu2~euDgJM4VNyLv1Mw__&Key-Pair-Id=K3USGZIKWMDCSX"
+              alt="blogImg04" class="articleImg" data-bs-toggle="modal" data-bs-target="#myModal" /> -->
+              <img
+              src="../../wwwroot/image/eleScore.jpg"
+              alt="blogImg04" class="articleImg" data-bs-toggle="modal" data-bs-target="#myModal" />
+              <h3 class="articleTitle">智能營養監測，隨時隨地掌握健康狀態</h3>
+            <div class="articleContent">
+              <p>
+                智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
+              </p>
+
+              <!-- </div> -->
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="智慧聯網電子秤"
+                  onclick="confirmPurchase('智慧聯網電子秤')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="../../wwwroot/image/vegetable.png"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">
+              直達家門的田園鮮蔬，給您最天然的滋味
+            </h3>
+            <div class="articleContent">
+              <p>
+                田園新鮮蔬果盒，友善農業出品，精心搭配每日營養，方便又美味
+              </p>
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="蔬菜箱"
+                  onclick="confirmPurchase('蔬菜箱')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="../../wwwroot/image/rice.jpg"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">從田間到餐桌，享受有機米的自然風味</h3>
+            <div class="articleContent">
+              <p>
+                有機米，來自純淨土壤與友善農法，經過精心耕種，保留了天然營養，口感香濃
+              </p>
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="有機米"
+                  onclick="confirmPurchase('有機米')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="../../wwwroot/image/eleScore.jpg"
+            alt="blogImg04" class="articleImg" />
+          <div class="articleInfo">
+            <h3 class="articleTitle">智能營養監測，隨時隨地掌握健康狀態</h3>
+
+            <div class="articleContent">
+              <p>
+                智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
+              </p>
+
+              <!-- </div> -->
+              <div class="articleContentbutton">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="智慧聯網電子秤"
+                  onclick="confirmPurchase('智慧聯網電子秤')">
+                  購買
+                </button>
+                <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+                  收藏
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  </div>
+
+  <!-- 模擬框 -->
+  <!-- <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">模態框標題</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://d41chssnpqdne.cloudfront.net/artist_bot/29606060/task_task:21cfb400-11b0-48b3-b4e8-bb400f005745/eHbjN.png?Expires=1721213688&Signature=bjjc2bZP2tfb0hcPaJZPgOmM2lgs51TjcEBzcJsosqKkq~YPUtKryVHzfkIRzzsTyMQfVoXnq-Amgr2Gh1sKnAXo9JsqT38Y5kdskjlKKoMCoe1FG9rhyJbeqGTVvfJf3MkABUlNX7A3gcFPKjs2gXvQV6jlZvSEg5iasbXa8Ko7LO4pxSlnwITKGDA98nzQ566t-0UuknFckqFBjSRMD4UjCKPKgBeXbXo7Y46ES6Tc-Ot5azn0ZVqEKJIEPCFFSX7jXnqJIMQSlujWXogPtTvvnBWOhLaT6FgwQsWKrxZIQcB-FssmtH9o70cGmme-3iiJu2~euDgJM4VNyLv1Mw__&Key-Pair-Id=K3USGZIKWMDCSX"
+            alt="blogImg04" class="articleImg">
+          <p>
+            智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
+          </p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-primary">購買</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="footer">
+    <div class="social">
+      <a href="#">© 2024 MyFitnesspal</a>
+      <a href="#">免責聲明</a>
+      <a href="#">關於我們</a>
+    </div>
+    <div class="social-icons">
+      <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function search() {
+      var q = $("input[name='q']").val();
+      if (q == "") {
+        alert("請輸入關鍵字");
+        return false;
+      }
+
+      return true
+    }
+
+
+    // function openModal() {
+    //   var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    //   myModal.show();
+    // }
+  </script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper(".swiper", {
+          freeMode: true, // 自由滑動
+
+          pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+          },
+          navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+          },
+          loop: true, // 啟用循環播放
+          autoplay: {
+              delay: 100, // 設置自動播放延遲時間，單位為毫秒
+              disableOnInteraction: true, // 使用者交互後是否停止自動播放
+          },
+          grid: {
+              rows: 3,
+          },
+          breakpoints: {
+              768: {
+                  grid: {
+                      rows: 1,
+                  },
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+              },
+
+              375: {
+                  grid: {
+                      rows: 1,
+                  },
+                  slidesPerView: 1,
+                  spaceBetween: 24,
+              },
+          },
+      });
+
+      // 獲取所有購買按鈕，這些按鈕具有類名為 .btn-primary 和 data-toggle="modal"
+      const purchaseButtons = document.querySelectorAll(
+          '.btn-primary[data-toggle="modal"]'
+      );
+
+      // 遍歷處理每個購買按鈕
+      purchaseButtons.forEach((button) => {
+          // 為每個按鈕添加點擊事件監聽器
+          button.addEventListener("click", function () {
+              // 獲取購買按鈕上的商品名稱
+              const itemName = button.getAttribute("data-item");
+
+              // 彈出確認對話框
+              const result = confirm(`您確定要購買 ${itemName} 嗎？`);
+
+              // 根據使用者的選擇執行相應的操作
+              if (result) {
+                  alert(`您已成功購買 ${itemName}！`);
+                  // 這裡可以添加購買成功後的其他操作，比如跳轉到購物車頁面
+              } else {
+                  alert(`您已取消購買 ${itemName}。`);
+                  // 這裡可以添加使用者取消購買時的操作
+              }
+          });
+      });
+  });
+
+  // 切換商品收藏狀態的函數
+  function toggleFavorite(button) {
+      // 獲取商品名稱
+      const itemName = button.parentElement
+          .querySelector(".btn-primary")
+          .getAttribute("data-item");
+
+      // 切換按鈕樣式和文本
+      if (button.classList.contains("btn-danger")) {
+          button.classList.remove("btn-danger");
+          button.classList.add("btn-secondary");
+          button.textContent = "收藏";
+          alert(`您已取消收藏 ${itemName}。`);
+      } else {
+          button.classList.remove("btn-secondary");
+          button.classList.add("btn-danger");
+          button.textContent = "取消收藏";
+          alert(`您已成功收藏 ${itemName}！`);
+      }
+  }
+</script>
+
+
+</body>
+
+</html>

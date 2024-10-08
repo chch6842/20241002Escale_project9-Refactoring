@@ -1,0 +1,217 @@
+@using escale.Models;
+@{
+  Layout = "_LayoutShopping";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  List<Products> ProductList = new List<Products>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  using var prod = new z_sqlProducts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ProductList = prod.GetSpecialProducts();
+
+}
+
+
+
+<div class="classification">
+  @* <div class="row">
+  <aside class="left col-lg-2 d-flex justify-content-center">
+  <div>
+  <div class="box1">
+  <a href="@Url.Action("Index" , "Category" , new {area = "" , id = "All"})" class="link-title visit">全站商品</a>
+  </div>
+  @foreach (var item1 in TopCategoryList)
+
+  {
+  <div class="box1">
+  <a href="@Url.Action("Index" , "Category" , new {area = "" , id = item1.CategoryNo})"
+  class="link-title">@item1.CategoryName</a>
+  @{
+  DetailCategoryList = category.GetDetailCategoryList(item1.CategoryNo);
+
+  foreach (var item2 in DetailCategoryList)
+
+  {
+  <a href="@Url.Action("Index" , "Category" , new {area = "" , id = item2.CategoryNo})">
+  @item2.CategoryName
+  </a>
+  }
+  }
+  </div>
+  }
+  </div>
+  </aside> *@
+  <div class="col-8">
+
+    <span class="title-text">精選商品</span>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        @foreach (var item in ProductList)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+          <div class="swiper-slide">
+            <div class="articleInfo">
+              <img src="@item.Remark" alt="blogImg04" class="articleImg" data-bs-toggle="modal"
+                data-bs-target="#myModal" />
+              <div class="articleContent">
+                <p>
+                  @item.ProdName
+                </p>
+
+                <!-- </div> -->
+                @* <div class="articleContentbutton">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="@item.ProdName"
+              onclick="confirmPurchase('@item.ProdName')">
+              購買
+              </button>
+              <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+              收藏
+              </button>
+              </div> *@
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
