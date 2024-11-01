@@ -58,12 +58,12 @@
               aria-expanded="false">
               @* 會員功能 *@
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
               @if (SessionService.IsLogin)
               {
-                <li><a href="@Url.Action("Init", "Order", new { area = "Member", id = "unclosed" })"
+                <li><a href="@Url.Action("Init", "Order", new { area = "", id = "unclosed" })"
                     class="dropdown-item">未結訂單查詢</a></li>
-                <li><a href="@Url.Action("Init", "Order", new { area = "Member", id = "closed" })"
+                <li><a href="@Url.Action("Init", "Order", new { area = "", id = "closed" })"
                     class="dropdown-item">歷史訂單查詢</a></li>
                 <li><a href="@Url.Action("Index", "Profile", new { area = "" })" class="dropdown-item">我的帳號</a></li>
                 <li><a href="@Url.Action("Logout", "User", new { area = "" })" class="dropdown-item">登出</a></li>

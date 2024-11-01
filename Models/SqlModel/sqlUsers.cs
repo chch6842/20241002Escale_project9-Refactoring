@@ -205,11 +205,11 @@ VALUES
       parm.Add("RoleNo", "Member");
       parm.Add("IsValid", false);
       parm.Add("ValidateCode", str_code);
-      //parm.Add("UserNo", model.UserNo);
-      //parm.Add("UserName", model.UserName);
+      parm.Add("UserNo", model.UserNo);
+      parm.Add("UserName", model.UserName);
       parm.Add("Password", cryp.StringToSHA256(model.Password));
       parm.Add("ContactEmail", model.Email);
-      //parm.Add("GenderCode", model.GenderCode);
+      parm.Add("GenderCode", model.GenderCode);
       parm.Add("ContactAddress", model.Address);
       parm.Add("ContactTel", model.Tel);
       parm.Add("DeptNo", "");
